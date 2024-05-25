@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: #4c5769;
+  font-weight: 300;
+  font-style: italic;
+  font-family: "Lato";
+  padding: 25px;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+button {
+  color: white;
+  background-color: #506dab;
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: bold;
+  border-radius: 50px;
+}
+
+.card {
+  background-color: #4c5769;
+  opacity: 0.1;
+  color: black;
+}
+
+.gradient {
+  background: linear-gradient(to right, #1f3b6c, #4663ae 40%, #ffa8bd);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.typed {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid;
+  border-color: #4c5769;
+  width: 0;
+  animation:
+    typingDeleting 8s steps(30, end) forwards infinite,
+    blinking 1s infinite;
+}
+@keyframes typingDeleting {
+  0%,
+  5% {
+    width: 0%;
+  }
+  15%,
+  85% {
+    width: 100%;
+  }
+  95%,
+  100% {
+    width: 0%;
+  }
+}
+@keyframes blinking {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #4c5769;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
