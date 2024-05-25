@@ -23,7 +23,7 @@ export const Navbar = () => {
 
   return (
     <div
-      className={`flex justify-between items-center w-full sticky top-0 pt-[25px] pb-5 pr-[100px] pl-[100px] transition-shadow bg-white ${isScrolled && "shadow-2xl"}`}
+      className={`flex justify-between items-center w-full sticky top-0 pt-[25px] pb-5 pr-[100px] pl-[100px] transition-shadow bg-white ${isScrolled && "shadow-sm"}`}
     >
       <h3>Brigham Dent</h3>
       <div className="flex items-center ">

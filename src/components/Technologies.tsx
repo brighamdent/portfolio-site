@@ -45,9 +45,9 @@ export const Technologies = () => {
   return (
     <div className="flex flex-col items-center mt-32">
       <h1>Favorite Technologies</h1>
-      <div className="grid grid-cols-4 gap-4 w-[1200px] h-[500px] mt-20">
+      <div className="grid grid-cols-4 h-[500px] mt-10">
         {techData.map((tech) => (
-          <img src={tech.source} alt="" className="w-40 h-40" />
+          <img src={tech.source} alt="" className="m-10 w-40 h-40" />
         ))}
       </div>
     </div>

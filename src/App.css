@@ -35,8 +35,7 @@ button {
 }
 
 .card {
-  background-color: #4c5769;
-  opacity: 0.1;
+  background-color: rgba(76, 87, 105, 0.1);
   color: black;
 }
 
