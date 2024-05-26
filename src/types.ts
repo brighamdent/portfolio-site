@@ -7,3 +7,10 @@ export interface ProjectData {
   liveSite: string;
   layout: string;
 }
+
+export interface CertificationData {
+  title: string;
+  contents: string;
+  skills: string;
+  logo: string;
+}

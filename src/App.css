@@ -52,19 +52,19 @@ button {
   border-color: #4c5769;
   width: 0;
   animation:
-    typingDeleting 8s steps(30, end) forwards infinite,
+    typingDeleting 6s steps(30, end) forwards infinite,
     blinking 1s infinite;
 }
 @keyframes typingDeleting {
   0%,
-  5% {
+  2% {
     width: 0%;
   }
-  15%,
+  20%,
   85% {
     width: 100%;
   }
-  95%,
+  98%,
   100% {
     width: 0%;
   }

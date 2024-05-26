@@ -23,7 +23,7 @@ export const Home = () => {
       setCurrWord(words[currIndex]);
       currIndex++;
       console.log(currIndex);
-    }, 8000);
+    }, 6000);
 
     return () => clearInterval(intervalId);
   }, []);
