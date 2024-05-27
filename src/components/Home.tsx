@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 
 export const Home = () => {
   const [currWord, setCurrWord] = useState("beautiful websites");
@@ -22,7 +23,6 @@ export const Home = () => {
       }
       setCurrWord(words[currIndex]);
       currIndex++;
-      console.log(currIndex);
     }, 6000);
 
     return () => clearInterval(intervalId);
@@ -38,7 +38,10 @@ export const Home = () => {
           <h1 className="typed gradient">{currWord}.</h1>
         </div>
       </div>
-      <button className="mt-24 w-96 h-16 text-2xl">Contact Me</button>
+
+      <Link to="contact" smooth={true} duration={500}>
+        <button className="mt-24 w-96 h-16 text-2xl">Contact Me</button>
+      </Link>
     </div>
   );
 };

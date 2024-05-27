@@ -14,7 +14,7 @@ export const Projects: React.FC = () => {
       description:
         "Cube Quick is a Rubik's Cube timer and speed solve trainer built using React and Vite. It allows you to track your solves with respective cube types through sessions. It features World Cube Association-compliant scramble generation!",
       github: "https://github.com/brighamdent/Rubiks-Cube-Timer",
-      liveSite: "cubequick.com",
+      liveSite: "https://cubequick.com",
       layout: "right",
     },
     inglesDirecto: {
@@ -24,7 +24,7 @@ export const Projects: React.FC = () => {
       description:
         "Ingles Directo is an online platform crafted specifically for my English teaching business. Seamlessly integrated with Firebase and Stripe, it empowers clients to effortlessly enroll in online classes, manage subscriptions, and access personalized learning experiences. ",
       github: "https://github.com/brighamdent/inglesdirecto-site",
-      liveSite: "inglesdirecto.com",
+      liveSite: "https://inglesdirecto.com",
       layout: "left",
     },
   };

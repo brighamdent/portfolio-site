@@ -23,8 +23,22 @@ export const Project: React.FC<ProjectProps> = ({ projectData }) => {
           className="w-[400px] rounded-3xl"
         />
         <div className="flex pt-5">
-          <button className="w-48 text-xl mr-2">Source Code</button>
-          <button className="w-48 text-xl ml-2">View live Site</button>
+          <a
+            href={projectData.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button w-48 text-xl mr-2"
+          >
+            Source Code
+          </a>
+          <a
+            href={projectData.liveSite}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button w-48 text-xl ml-2"
+          >
+            View live Site
+          </a>
         </div>
       </div>
     </div>
