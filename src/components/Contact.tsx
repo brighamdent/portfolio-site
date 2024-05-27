@@ -4,7 +4,7 @@ import githubLogo from "../assets/github-icon.svg";
 
 export const Contact = () => {
   return (
-    <div className="flex flex-col items-center mt-20">
+    <div className="flex flex-col items-center mt-20 mb-5">
       <h1>Contact Me</h1>
       <div className="card rounded-3xl w-[900px] flex flex-col h-[400px] items-center space-y-4 p-4">
         <p className="text-[18px]">

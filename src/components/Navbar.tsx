@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-scroll";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,14 +29,28 @@ export const Navbar = () => {
       <h3>Brigham Dent</h3>
       <div className="flex items-center ">
         <ul className="flex justify-around w-96 text-2xl mr-10">
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li className="cursor-pointer">
+            <Link to="home" smooth={true} duration={500}>
+              Home
+            </Link>
+          </li>
+          <li className="cursor-pointer">
+            <Link to="about" smooth={true} duration={500}>
+              About
+            </Link>
+          </li>
+          <li className="cursor-pointer">
+            <Link to="contact" smooth={true} duration={500}>
+              Contact
+            </Link>
+          </li>
         </ul>
-        <button className="w-44 text-xl">
-          Projects
-          <FontAwesomeIcon className="pl-2" icon={faCode} />
-        </button>
+        <Link to="projects" smooth={true} duration={500}>
+          <button className="w-44 text-xl">
+            Projects
+            <FontAwesomeIcon className="pl-2" icon={faCode} />
+          </button>
+        </Link>
       </div>
     </div>
   );

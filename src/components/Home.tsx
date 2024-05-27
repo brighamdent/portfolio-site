@@ -29,7 +29,7 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen -mt-[75px]">
+    <div className="flex flex-col justify-center items-center mt-32 ">
       <div>
         <h1 className="gradient text-[90px]">Hey I'm Brigham Dent,</h1>
         <h1>A web developer always</h1>

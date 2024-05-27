@@ -6,17 +6,26 @@ import { Navbar } from "./components/Navbar";
 import { Technologies } from "./components/Technologies";
 import { Education } from "./components/education/Education";
 import { Projects } from "./components/projects/Projects";
+import { Element } from "react-scroll";
 
 function App() {
   return (
-    <div className="flex flex-col text-center">
+    <div className="flex flex-col items-center text-center">
       <Navbar />
-      <Home />
-      <About />
+      <Element name="home">
+        <Home />
+      </Element>
+      <Element name="about">
+        <About />
+      </Element>
       <Technologies />
       <Education />
-      <Projects />
-      <Contact />
+      <Element name="projects">
+        <Projects />
+      </Element>
+      <Element name="contact">
+        <Contact />
+      </Element>
     </div>
   );
 }
