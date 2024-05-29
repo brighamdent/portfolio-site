@@ -11,8 +11,8 @@ export const About = () => {
     <motion.div
       className="flex items-center justify-around mt-32 w-[900px] "
       ref={ref}
-      initial={{ opacity: 0.1, x: 100 }}
-      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0.1, x: 100 }}
+      initial={{ opacity: 0.1, y: 50 }}
+      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0.1, y: 50 }}
       transition={{ duration: 0.75 }}
     >
       <img src={headshot} alt="" className="rounded-lg w-[400px]" />

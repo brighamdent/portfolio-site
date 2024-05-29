@@ -32,7 +32,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, x: -100 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  show: { opacity: 1, x: 0, transition: { duration: 0.3 } },
 };
 
 export const Technologies = () => {
@@ -62,7 +62,7 @@ export const Technologies = () => {
             key={tech.name}
             src={tech.source}
             alt={tech.name}
-            className="m-10 w-40 h-40"
+            className="m-10 w-40 h-40 hover:bg-gray-200 p-4 rounded-lg"
             variants={itemVariants}
           />
         ))}

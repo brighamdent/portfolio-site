@@ -8,6 +8,8 @@ import {
   faCircleExclamation,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -89,8 +91,20 @@ export const Contact = () => {
     }
     setLoading(false);
   };
+
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
   return (
-    <div className="flex flex-col items-center mt-20 mb-5">
+    <motion.div
+      className="flex flex-col items-center mt-20 mb-5"
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.75 }}
+    >
       <h1>Contact Me</h1>
       <div className="card rounded-3xl w-[900px] flex flex-col items-center relative p-4">
         {loading && (
@@ -177,6 +191,6 @@ export const Contact = () => {
         </a>
       </div>
       <p>brighamdent@gmail.com</p>
-    </div>
+    </motion.div>
   );
 };
