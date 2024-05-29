@@ -1,7 +1,20 @@
 import headshot from "../assets/Headshot.jpg";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 export const About = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: false, // Animate only once
+    threshold: 0.1, // Trigger when 10% of the component is in view
+  });
+
   return (
-    <div className="flex items-center justify-around mt-32 w-[900px] ">
+    <motion.div
+      className="flex items-center justify-around mt-32 w-[900px] "
+      ref={ref}
+      initial={{ opacity: 0.1, x: 100 }}
+      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0.1, x: 100 }}
+      transition={{ duration: 0.75 }}
+    >
       <img src={headshot} alt="" className="rounded-lg w-[400px]" />
       <div className="flex flex-col items-center justify-around">
         <h1>About</h1>
@@ -12,6 +25,6 @@ export const About = () => {
           emerging technologies to deliver innovative solutions.
         </h2>
       </div>
-    </div>
+    </motion.div>
   );
 };

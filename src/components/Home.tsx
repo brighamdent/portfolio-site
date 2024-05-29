@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export const Home = () => {
   const [currWord, setCurrWord] = useState("beautiful websites");
@@ -17,6 +19,10 @@ export const Home = () => {
     "elegant code",
   ];
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
   useEffect(() => {
     let currIndex = 1;
     const intervalId = setInterval(() => {
@@ -33,22 +39,58 @@ export const Home = () => {
   return (
     <div className="flex flex-col justify-center items-center mt-24 ">
       <div>
-        <h1 className="gradient text-[90px]">Hey I'm Brigham Dent,</h1>
-        <h1>A web developer always</h1>
-        <div className="flex justify-center pr-96 pl-96">
+        <motion.h1
+          className="gradient text-[90px]"
+          ref={ref}
+          initial={{ opacity: 0, x: 100 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+          transition={{ duration: 0.75, delay: 0.1 }}
+        >
+          Hey I'm Brigham Dent,
+        </motion.h1>
+        <motion.h1
+          ref={ref}
+          initial={{ opacity: 0, x: -100 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+          transition={{ duration: 0.75, delay: 1.1 }}
+        >
+          A web developer always
+        </motion.h1>
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, x: 100 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+          transition={{ duration: 0.75, delay: 2.1 }}
+          className="flex justify-center pr-96 pl-96"
+        >
           <h1 className="pr-[10px]">creating</h1>
           <h1 className="typed gradient">{currWord}.</h1>
-        </div>
+        </motion.div>
       </div>
-
       <Link to="contact" smooth={true} duration={500}>
-        <button className="mt-16 w-96 h-16 text-2xl">Contact Me</button>
+        <motion.button
+          ref={ref}
+          initial={{ opacity: 0, x: -100 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+          transition={{ duration: 0.75, delay: 3.1 }}
+          className="mt-16 w-96 h-16 text-2xl"
+        >
+          Contact Me
+        </motion.button>
       </Link>
       <Link to="about" smooth={true} duration={500}>
-        <FontAwesomeIcon
-          icon={faAngleDown}
-          className="mt-32 h-14 text-[#506dab] bounce hover:text-[#1f3b6c] transition-colors duration-300 ease-in-out"
-        />
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 100 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+          transition={{ duration: 0.75, delay: 4.1 }}
+          className="flex justify-center pr-96 pl-96"
+        >
+          <FontAwesomeIcon
+            icon={faAngleDown}
+            className="mt-32 h-14 text-[#506dab] bounce hover:text-[#1f3b6c] transition-colors duration-300 ease-in-out"
+          />
+        </motion.div>
       </Link>
     </div>
   );

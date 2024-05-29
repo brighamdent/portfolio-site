@@ -4,6 +4,8 @@ import inglesDirectoLogo from "../../assets/inglesdirectologo.svg";
 import inglesDirectoPreview from "../../assets/ingesdirectopreview.png";
 import { Project } from "./Project";
 import { ProjectData } from "../../types";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export const Projects: React.FC = () => {
   const projectData: { [key: string]: ProjectData } = {
@@ -28,11 +30,28 @@ export const Projects: React.FC = () => {
       layout: "left",
     },
   };
+  const { ref, inView } = useInView({
+    triggerOnce: false, // Animate only once
+    threshold: 0.1, // Trigger when 10% of the component is in view
+  });
   return (
     <div className="flex flex-col items-center mt-20">
       <h1>Projects</h1>
-      <Project projectData={projectData.cubeQuick} />
-      <Project projectData={projectData.inglesDirecto} />
+      <motion.div
+        initial={{ opacity: 0.1, x: -100 }}
+        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0.1, x: -100 }}
+        transition={{ duration: 0.75 }}
+      >
+        <Project projectData={projectData.cubeQuick} />
+      </motion.div>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0.1, x: 100 }}
+        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0.1, x: 100 }}
+        transition={{ duration: 0.75 }}
+      >
+        <Project projectData={projectData.inglesDirecto} />
+      </motion.div>
       <Project projectData={projectData.cubeQuick} />
     </div>
   );

@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { Events, animateScroll } from "react-scroll";
 import "./App.css";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
@@ -9,6 +11,9 @@ import { Projects } from "./components/projects/Projects";
 import { Element } from "react-scroll";
 
 function App() {
+  useEffect(() => {
+    animateScroll.scrollToTop();
+  }, []);
   return (
     <div className="flex flex-col items-center text-center">
       <Navbar />
