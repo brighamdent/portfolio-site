@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export const Projects: React.FC = () => {
-  const projectData: { [key: string]: ProjectData } = {
-    cubeQuick: {
+  const projectData: ProjectData[] = [
+    {
       name: "Cube Quick",
       logo: cubeQuickLogo,
       preview: cubeQuickPreview,
@@ -19,7 +19,7 @@ export const Projects: React.FC = () => {
       liveSite: "https://cubequick.com",
       layout: "right",
     },
-    inglesDirecto: {
+    {
       name: "Inglés Directo",
       logo: inglesDirectoLogo,
       preview: inglesDirectoPreview,
@@ -29,30 +29,34 @@ export const Projects: React.FC = () => {
       liveSite: "https://inglesdirecto.com",
       layout: "left",
     },
-  };
+    {
+      name: "Cube Quick",
+      logo: cubeQuickLogo,
+      preview: cubeQuickPreview,
+      description:
+        "Cube Quick is a Rubik's Cube timer and speed solve trainer built using React and Vite. It allows you to track your solves with respective cube types through sessions. It features World Cube Association-compliant scramble generation!",
+      github: "https://github.com/brighamdent/Rubiks-Cube-Timer",
+      liveSite: "https://cubequick.com",
+      layout: "right",
+    },
+  ];
+
   const { ref, inView } = useInView({
-    triggerOnce: false, // Animate only once
-    threshold: 0.1, // Trigger when 10% of the component is in view
+    threshold: 0.1,
   });
+
   return (
-    <div className="flex flex-col items-center mt-20">
+    <motion.div
+      className="flex flex-col items-center mt-20"
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.75 }}
+    >
       <h1>Projects</h1>
-      <motion.div
-        initial={{ opacity: 0.1, x: -100 }}
-        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0.1, x: -100 }}
-        transition={{ duration: 0.75 }}
-      >
-        <Project projectData={projectData.cubeQuick} />
-      </motion.div>
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0.1, x: 100 }}
-        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0.1, x: 100 }}
-        transition={{ duration: 0.75 }}
-      >
-        <Project projectData={projectData.inglesDirecto} />
-      </motion.div>
-      <Project projectData={projectData.cubeQuick} />
-    </div>
+      {projectData.map((data, index) => (
+        <Project projectData={data} index={index} />
+      ))}
+    </motion.div>
   );
 };

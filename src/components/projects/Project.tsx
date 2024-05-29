@@ -1,12 +1,25 @@
 import { ProjectData } from "../../types";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface ProjectProps {
   projectData: ProjectData;
+  index: number;
 }
 
-export const Project: React.FC<ProjectProps> = ({ projectData }) => {
+export const Project: React.FC<ProjectProps> = ({ projectData, index }) => {
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+  });
+
+  const initialX = index % 2 === 0 ? 100 : -100;
+
   return (
-    <div
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: initialX }}
+      animate={inView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.75 }}
       className={`card flex justify-around items-center w-[900px] rounded-3xl h-[350px] mt-6 p-5 ${projectData.layout == "left" ? "flex-row-reverse" : ""}`}
     >
       <div className="flex flex-col items-start w-1/3 ">
@@ -45,6 +58,6 @@ export const Project: React.FC<ProjectProps> = ({ projectData }) => {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
