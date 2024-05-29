@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 export const Home = () => {
   const [currWord, setCurrWord] = useState("beautiful websites");
@@ -29,7 +31,7 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center mt-32 ">
+    <div className="flex flex-col justify-center items-center mt-24 ">
       <div>
         <h1 className="gradient text-[90px]">Hey I'm Brigham Dent,</h1>
         <h1>A web developer always</h1>
@@ -40,7 +42,13 @@ export const Home = () => {
       </div>
 
       <Link to="contact" smooth={true} duration={500}>
-        <button className="mt-24 w-96 h-16 text-2xl">Contact Me</button>
+        <button className="mt-16 w-96 h-16 text-2xl">Contact Me</button>
+      </Link>
+      <Link to="about" smooth={true} duration={500}>
+        <FontAwesomeIcon
+          icon={faAngleDown}
+          className="mt-32 h-14 text-[#506dab] bounce hover:text-[#1f3b6c] transition-colors duration-300 ease-in-out"
+        />
       </Link>
     </div>
   );
