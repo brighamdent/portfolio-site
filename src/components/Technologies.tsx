@@ -58,13 +58,16 @@ export const Technologies = () => {
         animate={inView ? "show" : "hidden"}
       >
         {techData.map((tech) => (
-          <motion.img
-            key={tech.name}
-            src={tech.source}
-            alt={tech.name}
-            className="m-10 w-40 h-40 hover:bg-gray-200 p-4 rounded-lg"
-            variants={itemVariants}
-          />
+          <div className="m-10 p-4 rounded-lg text-white hover:text-[#4c5769] text-[32px] transition-colors duration-300 ease-in-out">
+            <motion.img
+              key={tech.name}
+              src={tech.source}
+              alt={tech.name}
+              className="w-32 h-32 "
+              variants={itemVariants}
+            />
+            <p className="">{tech.name}</p>
+          </div>
         ))}
       </motion.div>
     </div>

@@ -38,7 +38,7 @@ export const Education = () => {
 
   return (
     <motion.div
-      className="flex flex-col items-center mt-18"
+      className="flex flex-col items-center mt-24 ease"
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
