@@ -24,13 +24,13 @@ function App() {
         <About />
       </Element>
       <Technologies />
-      <Education />
-      <Element name="projects">
-        <Projects />
-      </Element>
-      <Element name="contact">
-        <Contact />
-      </Element>
+      {/* <Education /> */}
+      {/* <Element name="projects"> */}
+      {/*   <Projects /> */}
+      {/* </Element> */}
+      {/* <Element name="contact"> */}
+      {/*   <Contact /> */}
+      {/* </Element> */}
     </div>
   );
 }

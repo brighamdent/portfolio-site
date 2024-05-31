@@ -46,6 +46,11 @@ button:not([disabled]):hover,
   color: black;
 }
 
+@media (max-width: 600px) {
+  .section {
+    padding: 30px 10px;
+  }
+}
 .gradient {
   background: linear-gradient(to right, #1f3b6c, #4663ae 40%, #ffa8bd);
   -webkit-text-fill-color: transparent;
