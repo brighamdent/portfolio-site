@@ -17,14 +17,14 @@ function App() {
   return (
     <div className="flex flex-col items-center text-center">
       <Navbar />
-      <Element name="home">
-        <Home />
-      </Element>
-      <Element name="about">
-        <About />
-      </Element>
-      <Technologies />
-      {/* <Education /> */}
+      {/* <Element name="home"> */}
+      {/*   <Home /> */}
+      {/* </Element> */}
+      {/* <Element name="about"> */}
+      {/*   <About /> */}
+      {/* </Element> */}
+      {/* <Technologies /> */}
+      <Education />
       {/* <Element name="projects"> */}
       {/*   <Projects /> */}
       {/* </Element> */}

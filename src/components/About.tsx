@@ -9,7 +9,7 @@ export const About = () => {
 
   return (
     <motion.div
-      className="flex flex-col items-center lg:mt-16"
+      className="flex flex-col items-center lg:mt-32"
       ref={ref}
       initial={{ opacity: 0.1, y: 50 }}
       animate={inView ? { opacity: 1, x: 0 } : { opacity: 0.1, y: 50 }}

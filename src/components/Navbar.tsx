@@ -65,12 +65,12 @@ export const Navbar = () => {
         Brigham Dent
       </h3>
       <FontAwesomeIcon
-        className="h-12 md:hidden z-50"
+        className="h-8 md:hidden z-50"
         onClick={handleToggle}
         icon={isHidden ? faBars : faTimes}
       />
       <motion.div
-        className={`${isHidden ? "hidden" : ""}  bg-white fixed inset-0 md:flex items-center justify-center md:relative flex flex-col md:flex-row items-center`}
+        className={`${isHidden ? "hidden" : ""}  bg-white fixed inset-0 md:flex justify-center md:relative flex flex-col md:flex-row items-center`}
         ref={ref}
         initial={{ opacity: 0, y: -50 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}

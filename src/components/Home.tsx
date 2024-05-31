@@ -37,7 +37,7 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-start md:justify-center mt-24 md:mt-0 items-center h-[50vh] md:h-screen">
+    <div className="flex flex-col items-center h-[75vh] pt-[15vh]">
       <div>
         <motion.h1
           className="gradient text-[30px] xs:text-[40px] sm:text-[60px] lg:text-[90px]  "
@@ -88,7 +88,7 @@ export const Home = () => {
         >
           <FontAwesomeIcon
             icon={faAngleDown}
-            className=" h-8 sm:h-14 text-[#506dab] bounce hover:text-[#1f3b6c] transition-colors duration-300 ease-in-out"
+            className="h-8 sm:h-14 text-[#506dab] bounce hover:text-[#1f3b6c] transition-colors duration-300 ease-in-out"
           />
         </motion.div>
       </Link>

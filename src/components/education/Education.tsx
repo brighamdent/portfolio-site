@@ -38,14 +38,14 @@ export const Education = () => {
 
   return (
     <motion.div
-      className="flex flex-col items-center mt-24 ease"
+      className="flex flex-col items-center lg:mt-24 ease"
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.75 }}
     >
       <h1>Education</h1>
-      <h3>
+      <h3 className="w-[500px] lg:w-[1024px]">
         While I’m mostly self-taught these are some of the most relevant
         certifications I have achieved:
       </h3>
