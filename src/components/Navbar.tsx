@@ -79,23 +79,32 @@ export const Navbar = () => {
         <motion.ul className="flex flex-col md:flex-row items-center justify-around w-[300px] lg:w-96 text-2xl md:mr-5 lg:mr-10 mb-6 h-40 md:h-0 md:mb-0">
           <li
             className="cursor-pointer border-transparent hover:border-b-[3px] border-gradient "
-            onClick={handleScrollToTop}
+            onClick={() => {
+              handleScrollToTop();
+              handleToggle();
+            }}
           >
             Home
           </li>
-          <li className="cursor-pointer hover:border-b-[3px] border-gradient">
-            <Link to="about" smooth={true} duration={500}>
+          <Link to="about" smooth={true} duration={500}>
+            <li
+              className="cursor-pointer hover:border-b-[3px] border-gradient"
+              onClick={handleToggle}
+            >
               About
-            </Link>
-          </li>
-          <li className="cursor-pointer hover:border-b-[3px] border-gradient">
-            <Link to="contact" smooth={true} duration={500}>
+            </li>
+          </Link>
+          <Link to="contact" smooth={true} duration={500}>
+            <li
+              className="cursor-pointer hover:border-b-[3px] border-gradient"
+              onClick={handleToggle}
+            >
               Contact
-            </Link>
-          </li>
+            </li>
+          </Link>
         </motion.ul>
         <Link to="projects" smooth={true} duration={500}>
-          <button className="w-44 text-xl btn-4">
+          <button className="w-44 text-xl btn-4" onClick={handleToggle}>
             Projects
             <FontAwesomeIcon className="pl-2" icon={faCode} />
           </button>

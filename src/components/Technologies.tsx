@@ -42,7 +42,7 @@ export const Technologies = () => {
   });
 
   return (
-    <div className="flex flex-col items-center section">
+    <div className="flex flex-col items-center section m-32 w-[300px] lg:w-[1200px]">
       <motion.h1
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -59,12 +59,12 @@ export const Technologies = () => {
         animate={inView ? "show" : "hidden"}
       >
         {techData.map((tech) => (
-          <div className=" m-5 lg:m-10 lg:p-4 rounded-lg text-white hover:text-[#4c5769] text-[16px] lg:text-[32px] transition-colors duration-300 ease-in-out">
+          <div className="m-6 lg:m-10 lg:p-4 rounded-lg text-white hover:text-[#4c5769] text-[16px] lg:text-[32px] transition-colors duration-300 ease-in-out">
             <motion.img
               key={tech.name}
               src={tech.source}
               alt={tech.name}
-              className=" w-20 h-20 lg:w-32 lg:h-32 "
+              className=" w-24 h-24 lg:w-32 lg:h-32 "
               variants={itemVariants}
             />
             <p className="">{tech.name}</p>
