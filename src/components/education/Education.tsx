@@ -45,7 +45,7 @@ export const Education = () => {
       transition={{ duration: 0.75 }}
     >
       <h1>Education</h1>
-      <h3 className="w-[500px] lg:w-[1024px]">
+      <h3 className="text-[18px] md:text-[24px] w-[300px] md:w-[500px] lg:w-[1024px]">
         While I’m mostly self-taught these are some of the most relevant
         certifications I have achieved:
       </h3>
