@@ -37,19 +37,21 @@ export const Education = () => {
   });
 
   return (
-    <div className="overflow-x-hidden">
-      <motion.div
-        className="flex flex-col items-center lg:mt-24 ease"
-        ref={ref}
-        initial={{ opacity: 0, y: 50 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.75 }}
-      >
-        <h1 className="text-[32px] md:text-[64px]">Education</h1>
-        <h3 className="text-[18px] md:text-[24px] w-[300px] md:w-[500px] lg:w-[1024px]">
-          While I’m mostly self-taught these are some of the most relevant
-          certifications I have achieved:
-        </h3>
+    <div className="overflow-x-hidden w-full">
+      <div className="ease flex flex-col items-center lg:mt-24">
+        <motion.div
+          className="ease flex flex-col items-center"
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.75 }}
+        >
+          <h1 className="text-[32px] md:text-[64px]">Education</h1>
+          <h3 className="w-[300px] text-[18px] md:w-[500px] md:text-[24px] lg:w-[1024px]">
+            While I’m mostly self-taught these are some of the most relevant
+            certifications I have achieved:
+          </h3>
+        </motion.div>
         {certificationData.map(
           (certification: CertificationData, index: number) => (
             <Certification
@@ -59,7 +61,7 @@ export const Education = () => {
             />
           ),
         )}
-      </motion.div>
+      </div>
     </div>
   );
 };

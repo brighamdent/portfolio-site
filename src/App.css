@@ -7,6 +7,9 @@ body {
   font-weight: 300;
   font-style: italic;
   font-family: "Lato";
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 h1 {

@@ -42,35 +42,37 @@ export const Technologies = () => {
   });
 
   return (
-    <div className="flex flex-col items-center section m-16 lg:m-32 w-[300px] lg:w-[1200px]">
-      <motion.h1
-        initial={{ opacity: 0, y: 50 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.75 }}
-        className="text-[32px] md:text-[64px]"
-      >
-        Favorite Technologies
-      </motion.h1>
-      <motion.div
-        ref={ref}
-        className="grid grid-cols-2 lg:grid-cols-4 lg:h-[500px] mt-10"
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? "show" : "hidden"}
-      >
-        {techData.map((tech) => (
-          <div className="m-6 lg:m-10 lg:p-4 rounded-lg text-white hover:text-[#4c5769] text-[16px] lg:text-[32px] transition-colors duration-300 ease-in-out">
-            <motion.img
-              key={tech.name}
-              src={tech.source}
-              alt={tech.name}
-              className=" w-24 h-24 lg:w-32 lg:h-32 "
-              variants={itemVariants}
-            />
-            <p className="">{tech.name}</p>
-          </div>
-        ))}
-      </motion.div>
+    <div className="overflow-x-hidden w-full flex flex-col items-center">
+      <div className="flex flex-col items-center section m-16 lg:m-32 w-[300px] lg:w-[1200px]">
+        <motion.h1
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.75 }}
+          className="text-[32px] md:text-[64px]"
+        >
+          Favorite Technologies
+        </motion.h1>
+        <motion.div
+          ref={ref}
+          className="grid grid-cols-2 lg:grid-cols-4 lg:h-[500px] mt-10"
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+        >
+          {techData.map((tech) => (
+            <div className="m-6 lg:m-10 lg:p-4 rounded-lg text-white hover:text-[#4c5769] text-[16px] lg:text-[32px] transition-colors duration-300 ease-in-out">
+              <motion.img
+                key={tech.name}
+                src={tech.source}
+                alt={tech.name}
+                className=" w-24 h-24 lg:w-32 lg:h-32 "
+                variants={itemVariants}
+              />
+              <p className="">{tech.name}</p>
+            </div>
+          ))}
+        </motion.div>
+      </div>
     </div>
   );
 };

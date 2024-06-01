@@ -56,7 +56,7 @@ export const Navbar = () => {
   }, []);
   return (
     <div
-      className={`flex justify-between items-center w-full sticky top-0 z-50 pt-[25px] pb-5 pr-[50px] pl-[50px] lg:pr-[100px] lg:pl-[100px] transition-shadow bg-white ${isScrolled && "shadow-sm"}`}
+      className={` flex justify-between items-center w-full sticky top-0 z-50 pt-[25px] pb-5 pr-[50px] pl-[50px] lg:pr-[100px] lg:pl-[100px] transition-shadow bg-white ${isScrolled && "shadow-sm"}`}
     >
       <h3
         onClick={handleScrollToTop}
