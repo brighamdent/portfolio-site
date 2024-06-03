@@ -25,12 +25,12 @@ function App() {
       </Element>
       <Technologies />
       <Education />
-      <Element name="projects">
+      <Element className="w-full" name="projects">
         <Projects />
       </Element>
-      {/* <Element name="contact"> */}
-      {/*   <Contact /> */}
-      {/* </Element> */}
+      <Element name="contact">
+        <Contact />
+      </Element>
     </div>
   );
 }

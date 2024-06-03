@@ -37,7 +37,7 @@ export const Education = () => {
   });
 
   return (
-    <div className="overflow-x-hidden w-full">
+    <div className="overflow-x-hidden w-full bg-red-50">
       <div className="ease flex flex-col items-center lg:mt-24">
         <motion.div
           className="ease flex flex-col items-center"
