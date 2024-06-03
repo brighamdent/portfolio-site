@@ -37,7 +37,7 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="overflow-x-hidden w-full">
+    <div className=" w-full">
       <div className="flex flex-col items-center h-[75vh] pt-[15vh]">
         <div>
           <motion.h1

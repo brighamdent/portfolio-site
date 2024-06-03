@@ -46,17 +46,19 @@ export const Projects: React.FC = () => {
   });
 
   return (
-    <motion.div
-      className="flex flex-col items-center mt-20"
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.75 }}
-    >
-      <h1>Projects</h1>
-      {projectData.map((data, index) => (
-        <Project projectData={data} index={index} />
-      ))}
-    </motion.div>
+    <div className="overflow-x-hidden w-full">
+      <motion.div
+        className="flex flex-col items-center mt-20"
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.75 }}
+      >
+        <h1 className="text-[32px] md:text-[64px]">Projects</h1>
+        {projectData.map((data, index) => (
+          <Project key={projectData[index].name} projectData={data} index={index} />
+        ))}
+      </motion.div>
+    </div>
   );
 };

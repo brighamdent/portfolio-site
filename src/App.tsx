@@ -25,9 +25,9 @@ function App() {
       </Element>
       <Technologies />
       <Education />
-      {/* <Element name="projects"> */}
-      {/*   <Projects /> */}
-      {/* </Element> */}
+      <Element name="projects">
+        <Projects />
+      </Element>
       {/* <Element name="contact"> */}
       {/*   <Contact /> */}
       {/* </Element> */}
