@@ -99,14 +99,14 @@ export const Contact = () => {
 
   return (
     <motion.div
-      className="flex flex-col items-center mt-20 mb-5"
+      className="flex flex-col items-center mt-20 mb-5 w-screen p-6"
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.75 }}
     >
       <h1>Contact Me</h1>
-      <div className="card rounded-3xl w-[900px] flex flex-col items-center relative p-4">
+      <div className="card rounded-3xl md:w-[900px] w-full flex flex-col items-center relative p-4">
         {loading && (
           <div className=" bg-[#00000033] flex justify-center items-center absolute w-full h-full top-0 rounded-3xl">
             <div className="loader h-14" />

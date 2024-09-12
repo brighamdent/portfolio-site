@@ -3,7 +3,6 @@ import { Link } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 export const Home = () => {
   const [currWord, setCurrWord] = useState("beautiful websites");
@@ -17,11 +16,6 @@ export const Home = () => {
     "seamless UX",
     "elegant code",
   ];
-
-  // const { ref, inView } = useInView({
-  //   triggerOnce: true,
-  //   threshold: 0.1,
-  // });
 
   useEffect(() => {
     let currIndex = 1;

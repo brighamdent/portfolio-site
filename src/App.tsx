@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Events, animateScroll } from "react-scroll";
+import { animateScroll } from "react-scroll";
 import "./App.css";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";

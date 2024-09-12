@@ -1,6 +1,5 @@
 import { CertificationData } from "../../types";
 import metaLogo from "../../assets/meta-icon.svg";
-import harvardLogo from "../../assets/Harvard-Coat-of-arms-shield-.svg";
 import ibmLogo from "../../assets/ibm.svg";
 import { Certification } from "./Certification";
 import { motion } from "framer-motion";
