@@ -15,13 +15,13 @@ export const Education = () => {
       skills: "Advanced JavaScript, Responsive Design, React Hooks",
       logo: metaLogo,
     },
-    {
-      title: "Harvard CS50x",
-      contents: "C , Python, Data structures and algorithms, SQL databases ",
-      skills:
-        "Strong understanding of data structures algorithms and Database management",
-      logo: harvardLogo,
-    },
+    // {
+    //   title: "Harvard CS50x",
+    //   contents: "C , Python, Data structures and algorithms, SQL databases ",
+    //   skills:
+    //     "Strong understanding of data structures algorithms and Database management",
+    //   logo: harvardLogo,
+    // },
     {
       title: "IBM Back-end JavaScript Developer",
       contents: "Back-End Development, Node.Js, JavaScript, Devops, express",
@@ -37,7 +37,7 @@ export const Education = () => {
   });
 
   return (
-    <div className="overflow-x-hidden w-full bg-red-50">
+    <div className="overflow-x-hidden w-full">
       <div className="ease flex flex-col items-center lg:mt-24">
         <motion.div
           className="ease flex flex-col items-center"

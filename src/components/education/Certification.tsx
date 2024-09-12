@@ -13,6 +13,7 @@ export const Certification: React.FC<CertificationProps> = ({
 }) => {
   const { ref, inView } = useInView({
     threshold: 0.5,
+    triggerOnce: true,
   });
 
   const initialX = index % 2 === 0 ? 100 : -100;
