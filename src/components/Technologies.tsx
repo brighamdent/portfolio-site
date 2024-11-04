@@ -37,13 +37,13 @@ const itemVariants = {
 
 export const Technologies = () => {
   const { ref, inView } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1,
   });
 
   return (
-    <div className="overflow-x-hidden w-full flex flex-col items-center">
-      <div className="flex flex-col items-center section m-16 lg:m-32 w-[300px] lg:w-[1200px]">
+    <div className="flex w-full flex-col items-center overflow-x-hidden">
+      <div className="section m-16 flex w-[300px] flex-col items-center lg:m-32 lg:w-[1200px]">
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -54,19 +54,20 @@ export const Technologies = () => {
         </motion.h1>
         <motion.div
           ref={ref}
-          className="grid grid-cols-2 lg:grid-cols-4 lg:h-[500px] mt-10"
+          className="mt-10 grid grid-cols-2 lg:h-[500px] lg:grid-cols-4"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
         >
           {techData.map((tech) => (
-            <div className="m-6 lg:m-10 lg:p-4 rounded-lg text-white hover:text-[#4c5769] text-[16px] lg:text-[32px] transition-colors duration-300 ease-in-out"
-                key={tech.name}
+            <div
+              className="m-6 rounded-lg text-[16px] text-white transition-colors duration-300 ease-in-out hover:text-[#4c5769] lg:m-10 lg:p-4 lg:text-[32px]"
+              key={tech.name}
             >
               <motion.img
                 src={tech.source}
                 alt={tech.name}
-                className=" w-24 h-24 lg:w-32 lg:h-32 "
+                className="h-24 w-24 lg:h-32 lg:w-32"
                 variants={itemVariants}
               />
               <p className="">{tech.name}</p>
